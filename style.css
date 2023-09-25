@@ -1,0 +1,124 @@
+body {
+  background-color: #f0f0f0;
+  font-family: "Courier New", Courier, monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#calculator {
+  width: 320px;
+  background-color: #d0d0d0;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+#displayBase {
+  grid-column: span 4;
+  height: 84px;
+  background-color: #333;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#displayBackground {
+  width: 98%;
+  height: 82px;
+  background-color: #222;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#display {
+  width: 96%;
+  height: 78px;
+  background-color: #111;
+  color: #a0ffa0;
+  font-size: 28px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 10px;
+  overflow: hidden;
+}
+
+button {
+  width: 60px;
+  height: 40px;
+  font-size: 18px;
+  border: none;
+  border-radius: 4px;
+  transition: all 0.1s ease;
+  cursor: pointer;
+  outline: none;
+  background-color: #aaa;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+button:active {
+  transform: translateY(2px);
+}
+
+.operator {
+  color: #fff;
+}
+
+button:before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background-color: #111;
+  border-radius: 2px;
+  z-index: -1;
+}
+
+button.number[value="0"] {
+  grid-column: 1;
+}
+
+#decimal {
+  grid-column: 2;
+}
+
+#equals {
+  width: 143px; /* Adjust width to make it wider */
+  grid-column: 3 / span 2;
+  grid-row: 6; /* Moving the equals sign to the 6th row */
+}
+
+button.number[value="3"] {
+  grid-column: 3;
+  grid-row: 5;
+}
+
+.operator[value="x"] {
+  grid-column: 4;
+  grid-row: 5;
+}
+
+button.number[value="0"] {
+  grid-column: 1;
+  grid-row: 6; /* Adjusting to the 6th row */
+}
+
+#decimal {
+  grid-column: 2;
+  grid-row: 6; /* Adjusting to the 6th row */
+}
